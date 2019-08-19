@@ -1,13 +1,23 @@
 import React from 'react';
 
+function myFunction(){
+  var email=("email").val();
+  var list = [];
+  list.push(email);
+  localStorage.setItem("listdata",list);
+}
 
 function App() {
+  var stored = localStorage.getItem("listdata");
+  var label = document.getElementsByName('email')[0]; 
+  console.log(label);
+
   return (
     
     <div className="App">
       <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
         
-  <a class="navbar-brand" href="#"><strong>Foodies</strong></a>
+  <a class="navbar-brand" href="./App"><strong>Foodies</strong></a>
 
  
   <ul class="navbar-nav">
@@ -73,6 +83,7 @@ function App() {
       <br></br>
       <br></br>
       <br></br>
+      <br></br>
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzrZEXcCGGDKg8C12mlMxL4-Qpdz5kFtsVETSSUKcGX81w6cLh" class="rounded" alt="Cinque Terre" width="304" height="236"></img>
       <br></br>
       <br></br>
@@ -81,13 +92,16 @@ function App() {
   </div>
   
 </div>
+<div class="row">
+<div class="col-md-4"></div>
+<div class="text-center row-6 col-md-4 right">
 <form action="/action_page.php">
-  <div class="form-group col-sm-4" allign="center">
-    <label for="email"><strong>Email address:</strong></label>
+  <div  class="form-group" allign="center">
+    <label id="email" for="email"><strong>Email address:</strong></label>
     <input type="email" class="form-control" id="email"></input>
   </div>
-  <div class="form-group col-sm-4">
-    <label for="pwd"><strong>Password:</strong></label>
+  <div class="form-group">
+    <label id="pass" for="pwd"><strong>Password:</strong></label>
     <input type="password" class="form-control" id="pwd"></input>
   </div>
   <div class="checkbox">
@@ -95,15 +109,13 @@ function App() {
   </div>
   <button type="button" onclick="myFunction()"class="btn btn-primary btn-md-2" allign="right">Subscribe</button>
 </form>
+</div>
+</div>
     </div>
-    
-    <script>
-function myFunction() {
-  document.getElementById("field2").value = document.getElementById("field1").value;
-}
-</script>
+
+   
   );
-  
+ 
 
 }
 
