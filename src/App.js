@@ -8,7 +8,10 @@ function myFunction(){
 }
 
 function App() {
-  
+  var stored = localStorage.getItem("listdata");
+  var label = document.getElementsByName('email')[0]; 
+  console.log(label);
+
   return (
     
     <div className="App">
